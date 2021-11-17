@@ -1,0 +1,81 @@
+<html>
+ <head>
+ <title> MOOD LIGHT   Control </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="../css/materialize.css">
+ </head>
+ <body>
+
+<div class="section row">
+			<div class="col s10">
+				<span class="flow-text">
+Mood Light
+	<a href="../index.html"><img src="../img/home2.png"></a> 
+				<a href="../html/Inner.html"><img src="../img/InnerRoom2.png"></a>
+</span>
+ <div id="container">
+<div class="card-image" align="middle">
+<img src="../img/neopixel.png"width="500"height="400"title="Mood Light">
+
+</div>
+ <!-- in the <button> tags below the ID attribute is the value sent to the arduino -->
+ </br></br>
+<div id="container"align="middle">
+
+<h1>MOOD LIGHT   Control</h1> 
+ <button id="11" class="led"style="font-size:2em; border-radius:0.5em;border-radius:0.5em; padding:10px 33px; margin:10px 10px">on</button> <!-- button for pin 11 -->
+<button id="10" class="led"style="font-size:2em; border-radius:0.5em; padding:10px 33px; margin:10px 10px">off</button> <!-- button for pin 10 -->
+<br>
+<br> 
+<br>
+<div class="section row">
+	<div class="divider"></div>	
+<span class="flow-text">
+ºÐÇÒ
+<br>
+ <button id="12" class="led"style="background: #00FF00;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:10px 10px color: #fff"> rgb</button> <!-- button for pin 12 -->
+ <button id="13" class="led"style="background: #ef332d;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:10px 10px color: #fff;"> gbr</button> <!-- button for pin 13 -->
+</span>
+
+		
+<br>
+<br> 
+<div class="section row">
+		
+<span class="flow-text">´Ü»ö
+<br>
+ <button id="14" class="led"style="background: #EFFBFB;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:10px 10px color:#120A2A;">white</button> <!-- button for pin 14 -->
+ <button id="15" class="led"style="background: #ffc0cb ;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:10px 10px color: #fff;">pink</button> <!-- button for pin 15 -->
+</span>
+<br>
+<br> 
+<div class="section row">		
+<span class="flow-text">
+ rainbow
+<br>
+<button id="16" class="led"style="background: #ef332d;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:10px 10px color: #fff;">RFade</button> <!-- button for pin 16 -->
+<button id="17" class="led"style="background: #ef332d;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:10px 10px color: #fff;">wRb</button> 
+
+</span>
+<div class="divider"></div>
+</br>
+<br> 
+<br> 
+<h2>¹à±â</h2>
+<button id="18" class="led"style="background: #A4A4A4;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:align:center;5px 5px color: #fff;">¹à±â 30</button> <!-- button for pin 18 -->
+<button id="19" class="led"style="background: #D8D8D8;font-size:2em; border-radius:0.5em; padding:10px 33px; align:center; margin:5px 5px color: #fff;">¹à±â 50</button> <!-- button for pin 19 -->
+<button id="20" class="led"style="background: #FAFAFA;font-size:2em; border-radius:0.5em; padding:10px 33px; margin:5px 5px color: #000000;">¹à±â 100</button> <!-- button for pin 20 -->
+</div>
+ <script src="jquery.min.js"></script>
+ <script type="text/javascript">
+  $(document).ready(function(){
+   $(".led").click(function(){
+    var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+    // send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+    $.get("http://10.1.33.133:80/", {pin:p}); // execute get request
+   });
+  });
+ </script>
+
+ </body>
+</html>
